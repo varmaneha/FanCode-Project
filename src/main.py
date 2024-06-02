@@ -21,11 +21,13 @@ def check_fancode_users_task_completion():
     fancode_users = get_fancode_users(users)
 
     for user in fancode_users:
+        print(f"User {user['id']} {user['name']} does  meet the fancode city criteria.")
+
         completion_percentage = calculate_completion_percentage(user, todos)
         if completion_percentage <= 50:
-            print(f"User {user['id']} does not meet the task completion criteria.")
+            print(f"User {user['id']} {user['name']} does not meet the task completion criteria.")
         else:
-            print(f"User {user['id']} meets the task completion criteria.")
+            print(f"User {user['id']} {user['name']} meets the task completion criteria.")
 
 if __name__ == "__main__":
     check_fancode_users_task_completion()
